@@ -2,6 +2,38 @@
 
 > **Estado:** idea en fase de planificación. Todavía no existe un prototipo.
 
+## El triángulo de exposición
+
+El triángulo de exposición es la relación entre tres configuraciones de la
+cámara que, juntas, determinan qué tan clara u oscura sale una foto.
+
+```mermaid
+flowchart TD
+    TRI("Triángulo de exposición")
+
+    TRI -->|"se compone de"| ISO("ISO")
+    TRI -->|"se compone de"| APE("Apertura")
+    TRI -->|"se compone de"| VEL("Velocidad de obturación")
+
+    ISO -->|"controla"| ISO1("Sensibilidad del sensor a la luz")
+    APE -->|"controla"| APE1("Tamaño de la abertura del lente")
+    VEL -->|"controla"| VEL1("Tiempo que entra luz al sensor")
+
+    ISO1 -->|"si aumenta"| ISO2("Foto más clara, con más ruido")
+    APE1 -->|"si se abre más"| APE2("Más luz, menos zona nítida")
+    VEL1 -->|"si es más lenta"| VEL2("Más luz, riesgo de movimiento borroso")
+
+    ISO2 -->|"se combinan para"| RES("Lograr una foto bien expuesta")
+    APE2 -->|"se combinan para"| RES
+    VEL2 -->|"se combinan para"| RES
+
+    ENF("Enfoque") -.->|"se complementa con"| TRI
+    ENF -->|"define"| ENF1("Qué parte de la foto se ve nítida")
+```
+
+> Mapa conceptual de ejemplo, mejorable. El enfoque no forma parte del
+> triángulo, pero la app también lo enseñará.
+
 ## ¿Qué es?
 
 Una app móvil pensada para simular una cámara, de modo que las personas aprendan los comandos y configuraciones de una cámara real.
@@ -75,7 +107,7 @@ fase de planificación. Si llegaste hasta aquí, estas son formas de explorarlo:
 
 ## Uso de inteligencia artificial
 
-Usé [Claude] para desarrollar y redactar la idea de forma
+Usé Claude para desarrollar y redactar la idea de forma
 más clara y para organizar este README. Revisé el contenido y no se incluyó
 ninguna funcionalidad que no exista: todo lo descrito como visión son ideas,
 no funciones desarrolladas.
